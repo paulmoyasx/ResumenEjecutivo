@@ -1,4 +1,4 @@
--- Esto apenas es un dummy para mostrar la manipulacion de las fechas y la construccion del resultado
+-- Esto apenas es un demo para mostrar la manipulacion de las fechas y la construccion del resultado
 declare  
 
 	@oficina varchar(100)='CLCH',-->aqui puedes poner un valor default
@@ -70,31 +70,31 @@ declare
 
 	--Obtener, formatar e insertar valores linea1
 	select @Concepto = 'Ventas del mes.'
-	select @valorActual=(convert(money,datepart(ms,getdate())/99.01) + convert(money,getdate())/datepart(ms,getdate()))
-	select @ValorAnterior= (convert(money,datepart(ms,getdate())/100.01) + convert(money,getdate()-10)/datepart(ms,getdate()))
+	select @valorActual=(convert(money,datepart(ms,getdate())/99.01) + convert(money,getdate())/datepart(ms,getdate())) /*colocar la funcion que calcula el resultado*/
+	select @ValorAnterior= (convert(money,datepart(ms,getdate())/100.01) + convert(money,getdate()-10)/datepart(ms,getdate())) /*colocar la funcion que calcula el resultado*/
 	select @Actual   = case when @valorActual	 is null then 'NA' else  '$'+convert(varchar,convert(money,isnull(@valorActual,0)),1) end
 	select @Anterior = case when @valorAnterior	 is null then 'NA' else  '$'+convert(varchar,convert(money,isnull(@valorAnterior,0)),1) end
 	insert into @retorno select @Concepto,@Actual,@Anterior
 
 	--Obtener, formatar e insertar valores linea2
 	select @Concepto = 'Ventas del año.'
-	select @valorActual=(convert(money,datepart(ms,getdate())/100.01) + convert(money,getdate()-10)/datepart(ms,getdate()))
-	select @ValorAnterior= (convert(money,datepart(ms,getdate())/200.01) + convert(money,getdate()-100)/datepart(ms,getdate()))*-1
+	select @valorActual=(convert(money,datepart(ms,getdate())/100.01) + convert(money,getdate()-10)/datepart(ms,getdate())) /*colocar la funcion que calcula el resultado*/
+	select @ValorAnterior= (convert(money,datepart(ms,getdate())/200.01) + convert(money,getdate()-100)/datepart(ms,getdate()))*-1 /*colocar la funcion que calcula el resultado*/
 	select @Actual   = case when @valorActual	 is null then 'NA' else  '$'+convert(varchar,convert(money,isnull(@valorActual,0)),1) end
 	select @Anterior = case when @valorAnterior	 is null then 'NA' else  '$'+convert(varchar,convert(money,isnull(@valorAnterior,0)),1) end
 	insert into @retorno select @Concepto,@Actual,@Anterior
 	
 	--Obtener, formatar e insertar valores linea3
 	select @Concepto = 'Cobranza del mes.'
-	select @valorActual= (convert(money,datepart(ms,getdate())/100.01) + convert(money,getdate())/datepart(ms,getdate()))*-1
-	select @ValorAnterior=(convert(money,datepart(ms,getdate())/200.01) + convert(money,getdate()-20)/datepart(ms,getdate()))*-1
+	select @valorActual= (convert(money,datepart(ms,getdate())/100.01) + convert(money,getdate())/datepart(ms,getdate()))*-1 /*colocar la funcion que calcula el resultado*/
+	select @ValorAnterior=(convert(money,datepart(ms,getdate())/200.01) + convert(money,getdate()-20)/datepart(ms,getdate()))*-1 /*colocar la funcion que calcula el resultado*/
 	select @Actual   = case when @valorActual	 is null then 'NA' else  '$'+convert(varchar,convert(money,isnull(@valorActual,0)),1) end
 	select @Anterior = case when @valorAnterior	 is null then 'NA' else  '$'+convert(varchar,convert(money,isnull(@valorAnterior,0)),1) end
 	insert into @retorno select @Concepto,@Actual,@Anterior
 
 	--Obtener, formatar e insertar valores linea4
 	select @Concepto = 'Cuentas por cobrar al ' + convert(varchar,day(@diaUltimoMes)) + ' de ' + lower(DATENAME(MONTH, GETDATE()) ) + '.'
-	select @valorActual=(convert(money,datepart(ms,getdate())/123.01) + convert(money,getdate()-20)/datepart(ms,getdate()))*-1
+	select @valorActual=(convert(money,datepart(ms,getdate())/123.01) + convert(money,getdate()-20)/datepart(ms,getdate()))*-1 /*colocar la funcion que calcula el resultado*/
 	select @ValorAnterior=null
 	select @Actual   = case when @valorActual	 is null then 'NA' else  '$'+convert(varchar,convert(money,isnull(@valorActual,0)),1) end
 	select @Anterior = case when @valorAnterior	 is null then 'NA' else  '$'+convert(varchar,convert(money,isnull(@valorAnterior,0)),1) end
@@ -102,7 +102,7 @@ declare
 
 	--Obtener, formatar e insertar valores linea5
 	select @Concepto = 'Cuentas por cobrar con más de 180 días al ' + convert(varchar,day(dateadd(day,-1,@diaPrimeroMes))) + ' de ' + (DATENAME(MONTH, GETDATE()) ) +'.'
-	select @valorActual=(convert(money,datepart(ms,getdate())/200.01)) 
+	select @valorActual=(convert(money,datepart(ms,getdate())/200.01)) /*colocar la funcion que calcula el resultado*/
 	select @ValorAnterior=null
 	select @Actual   = case when @valorActual	 is null then 'NA' else  '$'+convert(varchar,convert(money,isnull(@valorActual,0)),1) end
 	select @Anterior = case when @valorAnterior	 is null then 'NA' else  '$'+convert(varchar,convert(money,isnull(@valorAnterior,0)),1) end
