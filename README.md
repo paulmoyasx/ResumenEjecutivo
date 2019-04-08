@@ -31,7 +31,7 @@ Plan de solución:
 
         exec spResumenEjecutivoHTML 'CLCH','2019/01/01' ,'2019/01/31'            
         
-        exec spResumenEjecutivoEmail 'CLCH','2019/01/01' ,'2019/01/31',''
+        exec spResumenEjecutivoEmail 'CLCH','2019/01/01' ,'2019/01/31','nombre@mail.com'
 
 Antes de iniciar responder estas preguntas:
     Es posible crear objetos nuevos en la base de datos destino? (procedures y funciones)
