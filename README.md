@@ -1,6 +1,7 @@
 # ResumenEjecutivo
 https://github.com/paulmoyasx/ResumenEjecutivo
-Plan de solución:
+    
+    Plan de solución:
     0) para probar se puede utilizar el script spResumenEjecutivoDEMO.sql
 
     1) Construir las consultas sql que retnornan los valores para la columna "Actual"
@@ -20,7 +21,7 @@ Plan de solución:
     4) Enviar Email(s) (analizar sin ejecutar dbMailConfig.sql)
         #Si se tiene la opcion de utilizar el DBMail y podria crear job(s) para automatizar
         #Otra alternativa podria ser crear un programa para consultar los datos y enviar Email(s)
-        posiblemente el programa podria ser creado en c#, VBS, JavaSCript, pyhton algun otro de facil dominio y acesso
+        posiblemente el programa podria ser creado en c#, VBS, JavaSCript, python algun otro de facil dominio y acesso
 
         * spResumenEjecutivoEMAIL (llama al spResumenEjecutivoHTML )
 
