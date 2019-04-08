@@ -1,7 +1,7 @@
 # ResumenEjecutivo
 https://github.com/paulmoyasx/ResumenEjecutivo
 Plan de solución:
-    0) para probar se puede utilizar el script spResumenEjecutivoDUMY.sql
+    0) para probar se puede utilizar el script spResumenEjecutivoDEMO.sql
 
     1) Construir las consultas sql que retnornan los valores para la columna "Actual"
     estas mismas consultas pueden retornar los valores de la columna "Anterior" ajustando las fechas
