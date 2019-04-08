@@ -21,7 +21,7 @@ https://github.com/paulmoyasx/ResumenEjecutivo
     4) Enviar Email(s) (analizar sin ejecutar dbMailConfig.sql)
         #Si se tiene la opcion de utilizar el DBMail y podria crear job(s) para automatizar
         #Otra alternativa podria ser crear un programa para consultar los datos y enviar Email(s)
-        posiblemente el programa podria ser creado en c#, VBS, JavaSCript, python algun otro de facil dominio y acesso
+        El programa podria ser creado en c#, VBS, JavaSCript, python algun otro de facil dominio y acesso como PowerShell
 
         * spResumenEjecutivoEMAIL (llama al spResumenEjecutivoHTML )
 
